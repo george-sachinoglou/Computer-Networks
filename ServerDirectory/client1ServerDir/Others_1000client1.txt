@@ -1,0 +1,2 @@
+client2 posted b.txt
+client2 posted b.png

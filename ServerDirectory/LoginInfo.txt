@@ -1,0 +1,8 @@
+client1 client1pass
+client2 client2pass
+client3 client3pass
+client4 client4pass
+client5 client5pass
+client6 client6pass
+client7 client7pass
+client8 client8pass
