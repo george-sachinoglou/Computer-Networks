@@ -16,7 +16,7 @@ Contents:
 * [MultiThreading](MultiThreading)
 * [Notes](Notes)
 
-  ## KDClient Interface
+## KDClient Interface
   
 In this simple form of the network, we consider that each client performs the following functions:
 
@@ -110,7 +110,7 @@ transmission is completed”. The directory of the client still needs to be upda
 on the server side (synchronization function implementation), i.e. to have
 the same files as the directory stored locally on the client computer.
 
-  ## KDServer Interface
+## KDServer Interface
 
   In this form of the social network and the application, we consider that the server performs them
 following functions:
@@ -143,7 +143,7 @@ and its accompanying text to a client.
 popular and from which clients they are downloaded, and display them at the end
 execution of the program (implementation of the statistics function).
 
-  ## MultiThreading
+## MultiThreading
 
 * Each client will have an identifier (clientID).
   
@@ -169,7 +169,7 @@ who tried to access the file when it was "locked" by Client A.
 * As soon as the file is released, the server and/or another client gains access to it
 file.
 
-  ## Notes
+## Notes
 
 The clients and the server will communicate via sockets. Connecting to sockets is essentially
 connecting two programs over a network. The sockets implementation from your java.net
