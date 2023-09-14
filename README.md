@@ -11,10 +11,10 @@ The system consists of a server and multiple similar clients, which maintain an 
 a set of followers, which constitute his social graph (SocialGraph). The graph can be changed during execution.
 
 Contents:
-* [KDClient Interface](KDClient-Interface)
-* [KDServer Interface](KDServer-Interface)
-* [MultiThreading](MultiThreading)
-* [Notes](Notes)
+* [KDClient Interface](#KDClient-Interface)
+* [KDServer Interface](#KDServer-Interface)
+* [MultiThreading](#MultiThreading)
+* [Notes](#Notes)
 
 ## KDClient Interface
   
