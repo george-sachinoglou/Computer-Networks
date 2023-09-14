@@ -114,57 +114,64 @@ the same files as the directory stored locally on the client computer.
 
   In this form of the social network and the application, we consider that the server performs them
 following functions:
-  * Maintains a list of IP addresses and Ports that correspond to the clients' clientIDs
-who participate in the social network and updates this list accordingly
+* Maintains a list of IP addresses and Ports that correspond to the clients' clientIDs
+who participate in the social network and updates this list accordingly with the
 changes occurring in social graphs.
-  * Once a client has connected, the following diagnostic message should appear:
+
+* Once a client has connected, the following diagnostic message should appear:
 "Welcome client clientID".
+
 * It must support multiple threads simultaneously by creating a separate thread for
 every client it serves. You can assume that the maximum number of threads that
-can create the server is given and is equal to 8.
-  * Multiple clients can simultaneously communicate with the server and have
-access to their respective files Profile_XclientID and Others_XclientID (Implementation in
-2ND PHASE).
-  * It must implement the update and synchronization (from the client to the server and
-vice versa) of Profile_XclientID and Others_XclientID files (Implementation in PHASE 2)
+the server can create is given and is equal to 8.
+
+* Multiple clients can simultaneously communicate with the server and have
+access to their respective files Profile_XclientID and Others_XclientID
+
+* It must implement the update and synchronization (from the client to the server and
+vice versa) of Profile_XclientID and Others_XclientID files
 as soon as a post is posted by a client to its respective followers or
-as soon as a client replies to a post of another client
-  * It must implement the updating and synchronization of the client directories only
-an upload/download is done.
+as soon as a client replies to a post of another client.
+
+* It must implement the updating and synchronization of the client directories only when
+an upload/download is made.
   * It must implement the "search" function to search for a photo.
   * It must implement the send function to send a photo file
-and accompanying text to a client.
-  * Must keep statistics on which photo files are the most
-popular and from which clients they are downloaded, and display them at the end
-execution of the program (implementation of the statistics function). (Implementation in 2nd
-PHASE.
+and its accompanying text to a client.
 
+* Must keep statistics on which photo files are the most
+popular and from which clients they are downloaded, and display them at the end
+execution of the program (implementation of the statistics function).
 
   ## MultiThreading
 
-  Each client will have an identifier (clientID).
+* Each client will have an identifier (clientID).
+  
 * Client A accesses the file Profile_XclientА ("locks" the file), which
 is on the server and the server starts a timer.
+
 * After the timer expires, if client A has not "unlocked" the file, it is displayed
-on the screen diagnostic warning message that the server will "unlock" it
-file.
+on the screen diagnostic warning message that the server will "unlock" the file.
 Client A saves the file and "unlocks" it.
-* The server tries to access the Profile_XclientA file to read them
-his posts and to inform the Others of his followers If client A already has
+
+* The server tries to access the Profile_XclientA file to read
+their posts and to inform the Others of their followers. If client A already has
 access to the file, a diagnostic message appears e.g. "The file is locked!" to
-server (Implementation in PHASE 2). .
+server.
+
 * Also, a client B tries to access the file Profile_XclientА to
-read his posts. If client A already has access to the file, one is displayed
-diagnostic message e.g. "The file is locked!" to client B (Implementation in PHASE 2).
+read their posts. If client A already has access to the file, a
+diagnostic message is displayed e.g. "The file is locked!" to client B (Implementation in PHASE 2).
+
 * The server maintains a directory (in order of priority) with the clientIDs of all clients
-who tried to access the file when it was "locked" by him
-Client A.
+who tried to access the file when it was "locked" by Client A.
+
 * As soon as the file is released, the server and/or another client gains access to it
 file.
 
   ## Notes
 
-The clients and the server will communicate via sockets. Connecting to sockets is essentially one
+The clients and the server will communicate via sockets. Connecting to sockets is essentially
 connecting two programs over a network. The sockets implementation from your java.net
 allows you to manage sockets as a data exchange channel. There are two classes
 in the java.net package, Socket and ServerSocket, which are used by the client and the
@@ -173,8 +180,8 @@ server respectively. A typical flow with sockets is described as follows:
 * The server will listen on a ServerSocket, which is associated with a specific port.
 * Each client will use a socket to connect to the ServerSocket. The client must
 already know the hostname of the computer running ServerSocket as well as the port
-ServerSocket number.
-* The ServerSocket will accept the client connection and there will now be one available
+number of the ServerSocket.
+* The ServerSocket will accept the client connection and there will now be an available
 special socket it can use to communicate with the client.
-* The client and server will now be able to communicate by reading and writing via
+* The client and server will now be able to communicate by reading and writing through
 of their sockets.
